@@ -1,0 +1,78 @@
+.QuickDashboard {
+    position: absolute;
+    z-index: 1000;
+    display: flex;
+    height: 92vh;
+    left: 0px;
+    background-image: linear-gradient(#0B0C10 ,#1c2237);;
+    box-sizing: border-box;
+    color: #DEF2F1;
+    box-shadow: 2px 2px 2px 2px rgba(39,106,251,0.3);
+    border-top: none;
+    width: 300px;
+    transition: all 0.6s ease;
+    font-size: 12px;
+    font-family: 'Merienda' ,cursive;
+    justify-content: space-between;
+
+    &.hide {
+        left: -270px;
+    }
+    
+    .QuickDashboard-wrapper {
+        margin: 10px;
+        width: 250px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .QuickDashboard-img-wrapper {
+            width: 75%;
+
+            img {
+                margin-top: 10px;
+                margin-bottom: 10px;
+                border-radius: 50%;
+                display: inline-block;
+                max-width: 90%;
+            }
+        }
+
+        .QuickDashboard-Name {
+            font-size: 15px;
+            margin: 10px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .QuickDashboard_certificates {
+            margin-left: 15px;
+            width: 100%;
+            
+            .QuickDashboard_certificate {
+                font-size: 12px;
+                line-height: 30px;
+                display: flex;
+                justify-content: space-between;
+
+                :first-child {
+                    font-family: serif;
+                    font-weight: 800;
+                }
+            }
+        }
+
+        .QuickDashboard_buttons {
+            margin: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    .QuickDashboard-icon {
+        margin: 10px;
+        cursor: pointer;
+        text-shadow: #ccc;
+    }
+}
