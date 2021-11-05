@@ -1,0 +1,90 @@
+.PDf_Viewer_Card {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 2px 2px 2px rgba(20,20,20,0.4);
+    border-radius: 2%;
+    border: 0.002px solid rgba(0,0,0,0.1);
+    align-items: center;
+    justify-content: center;
+    min-width: 120px;
+    margin: 10px;
+    width: 280px;
+    height: 220px;
+    cursor: pointer;
+
+    .Pdf_Preview {
+        display: flex;
+        width: 95%;
+        margin: 10px;
+        justify-content: center;
+
+        img {
+            display: inline-block;
+            height: 80px;
+        }
+    }
+    
+    .Pdf_label {
+        margin: 12px;
+    }
+
+    .Pdf_buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .Pdf_filepicker {
+            font-size: 10px;
+            width: 100%;
+
+            .file_status_success {
+                background-color: rgb(40,184,92,0.6);
+                padding: 10px;
+                
+                :first-child {
+                    font-style: normal;
+                    font-style: serif;
+                    font-weight: 1000;
+                    margin-right: 10px;
+                }
+
+            }
+
+            .file_status_pending {
+                background-color: rgb(255,193,7,0.5);
+                padding: 10px;
+                width: 280px;
+                display: flex;
+                justify-content: center;
+                
+                :first-child {
+                    font-style: normal;
+                    font-style: serif;
+                    font-weight: 1000;
+                    margin-right: 10px;
+                }
+
+            }
+        }
+
+        
+        input {
+            display: flex;
+            justify-content: center;
+            margin: 5px 5px 5px 10px;
+        }
+        
+        .Pdf_upload_button {
+            width: 280px;
+            display: flex;
+            justify-content: center;
+            
+            .Pdf_uploaded_buttons {
+                width: 200px;
+                display: flex;
+                justify-content: space-around;
+                padding: 10px;
+            }
+        }
+    }   
+}

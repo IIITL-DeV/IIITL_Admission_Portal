@@ -1,0 +1,58 @@
+.Vendor_Card_Container {
+    display: flex;
+    box-sizing: border-box;
+    box-shadow: 2px 2px 2px 2px rgba(20,20,20,0.4);
+    border-radius: 2%;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border: 0.002px solid rgba(0,0,0,0.1);
+    min-width: 350px;
+    height: 150px;
+    width: 98%;
+    margin: 5px;
+
+    .Vendor_Card_Profile_Pic {
+
+        img {
+            display: inline-block;
+            height: 150px;
+        }
+    }
+
+    .Vendor_Card_Details {
+        flex-basis: 80%;
+        margin: 8px 10px 10px 10px;
+
+        :first-child {
+            line-height: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        :nth-child(2) {
+            display: flex; 
+            font-size: 10px;
+            align-items: center;
+            line-height: 15px;
+            margin-bottom: 5px;
+
+            :first-child {
+                margin-right: 5px;
+                color: #777;
+            }
+        }
+
+        :nth-child(3) {
+            font-size: 10px;
+        }
+    }
+
+    .Vendor_Card_Price {
+        flex-basis: 10%;
+        margin-top: 10px;
+        margin-right: 10px;
+        font-size: 15px;
+        color: #1cc237;
+    }
+}

@@ -1,0 +1,72 @@
+.Login_Register_Container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 96vh;
+
+    .LoginPage_Container {
+        display: flex;
+        width: 35%;
+        flex-direction: column;
+        box-sizing: border-box;
+        box-shadow: 2px 2px 2px 2px rgba(20,20,20,0.4);
+        border-radius: 2%;
+        border: 0.002px solid rgba(0,0,0,0.1);
+        margin: 5vw;
+        
+        .LoginPage_Container_Heading {
+            display: flex;
+            justify-content: center;
+            margin-left: -20px;
+        }
+
+        .LoginPage_Container_Avatar {
+            width: 95%;
+            display: flex;
+            justify-content: center;
+
+            img {
+                display: inline-block;
+                border-radius: 50%;
+                height: 80px;
+            }
+        }
+
+        .LoginPage_submit {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            width: 25%;
+            margin: 25px auto;
+        }
+    }
+
+    .Movable_Container {
+        position: absolute;
+        background-color: #0b0C10;
+        left: 0;
+        width: 45%;
+        height: 97vh;
+        align-content: center;
+        justify-content: center;
+
+        .Register_Animation {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            justify-content: center;
+            margin-top: -20px;
+
+            div {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .movable_container_btn {
+                margin-top: 20px;
+            }
+        }
+    }
+}

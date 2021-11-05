@@ -1,0 +1,145 @@
+.ProfilePage_Container {
+    display: flex;
+    height: 100vh;
+    margin-left: 50px;
+
+    .Profile_Dashboard {
+        flex-basis: 15%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-sizing: border-box;
+        box-shadow: 0.5px 0.5px 0.5px 0.1px rgba(20,20,20,0.4);
+        border-radius: 2%;
+        border: 0.002px solid rgba(0,0,0,0.1);
+
+        .Profile_pic {
+            width: 95%;
+            margin: 20px;
+
+            img {
+                display: inline-block;
+                border-radius: 50%;
+                width: 120px;
+            }
+        }
+    }
+
+    .Profile_Information {
+        width: 100%;
+
+        .Profile_Upload_Documents {
+            margin: 20px;
+            padding: 5px;
+            display: flex;
+            box-sizing: border-box;
+            box-shadow: 0.2px 0.2px 0.2px 0.2px rgba(20,20,20,0.4);
+            border: 0.002px solid rgba(0,0,0,0.1);
+            flex-direction: column;
+            overflow-x: auto;
+            align-items: center;
+
+            .Profile_Upload_heading {
+                margin: 5px;
+            }
+    
+            .Profile_Documents {
+                    display: flex;
+            }
+            
+        }
+    }
+
+    .Profile_Donors_Information {
+        display: flex;
+        flex-direction: column;
+        margin: 20px;
+
+        .Pdf_loader {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .Doc_info {
+            display: flex;
+            
+            .Pdf {
+                flex-basis: 55%;
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+                overflow: auto;
+                margin-right: 20px;
+            }
+
+            .Pdf_approval {
+                display: flex;
+                flex-direction: column;
+                flex-basis: 42%;
+                box-shadow: 2px 2px 2px 2px rgba(20,20,20,0.4);
+                border-radius: 2%;
+                border: 0.002px solid rgba(0,0,0,0.1);
+                height: 200px;
+                align-items: center;
+
+                .Stages_involved {
+                    
+                    ul {
+                        font-size: 9px;
+                        line-height: 12px;
+                        display: flex;
+                        list-style: none;
+                        justify-content: center;
+
+                        :first-child {
+                            margin-left: 0px;
+                        }
+                        
+
+                        li {
+                            display: flex;
+                            flex-direction: column;
+                            width: 80px;
+                            margin-left: 20px;
+                            margin-right: 15px;
+                            align-items: center;
+                            
+                            .Pdf_approved {
+                                font-size: 12px;
+                                color: rgb(40,184,92);
+                                margin: 5px;
+                            }
+
+                            .Pdf_pending {
+                                font-size: 12px;
+                                color: #ccc;
+                                margin: 5px;
+                            } 
+                        }
+                    }
+
+                    .Problem_Statement {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        margin: 35px;
+                        font-size: 12px;
+
+                        .If_Not_Approoved {
+                            color: red;
+                        }
+
+                        .Approoval_percentage {
+                            font-weight: 1000;
+                            color: #23ce47;
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+}
