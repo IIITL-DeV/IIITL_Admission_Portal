@@ -1,0 +1,95 @@
+.Navbar_container {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    flex-direction: row;
+    justify-content: space-between;
+    font-family: 'Merienda' ,cursive;
+    background-color: #0B0C10;
+    color: #fff;
+    
+
+    .Navbar_logo_container {
+        margin-left: 1rem;
+        display: flex;
+
+        .Navbar_logo_heading {
+            font-weight: 800;
+            color: #fff;
+            font-size: 1rem;
+            padding-left: 4px;
+            font-family: 'Merienda' ,cursive;
+        }
+
+    }
+
+    .Navbar_menu_icons {
+        cursor: pointer;
+    }
+
+    .Navbar_links {
+        display: flex;
+        align-items: center;
+        justify-content: right;
+        font-size: 0.8rem;
+        list-style: none;
+        padding-right: 2rem;
+
+        .Navbar_link {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            height: 60px;
+            z-index: 20;
+            transition: all 0.5s ease;
+
+            &:hover {
+                background-color: #14A76C;
+                border-bottom-left-radius: 50px;
+                border-bottom-right-radius: 50px;
+            }
+
+            .Navbar_link_name {
+                color: #fff;
+                font-family: 'Merienda' ,cursive;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 968px) {
+    .Navbar_menu_icons {
+        display: none;
+    }
+}
+ 
+@media screen and (max-width: 968px) {
+    .Navbar_links {
+        width: 100%;
+        flex-direction: column;
+        height: 100vh;
+        position: absolute;
+        right: -100%;
+        top: 40px;
+        opacity: 1;
+        transition: all 0.5s ease;
+        background-color: #0B0C10;
+
+        &.active {
+            right: 0%;
+            transition: all 0.6s ease;
+            z-index: 20;
+            align-items: center;
+            box-sizing: border-box;
+        }
+    }
+
+    .Navbar_menu_icons  {
+        padding: 1rem;
+        align-items: center;
+        justify-content: center;
+    }
+}

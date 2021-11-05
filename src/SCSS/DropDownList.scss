@@ -1,0 +1,36 @@
+.DropDownList_Container {
+
+    select {
+        width: 150px;
+        margin-top: 25px;
+        padding: 5px 35px 5px 10px;
+        font-size: 13px;
+        border: 1px solid #CCC;
+        height: 34px;
+        font-family: 'Merienda', cursive;
+        box-sizing: border-box;
+        box-shadow: 2px 2px 2px 2px rgba(20,20,20,0.4);
+        border-radius: 2%;
+        line-height: 1.5;
+        outline: none;
+        appearance: none;
+
+        background-image:
+          linear-gradient(45deg, transparent 50%, blue 50%),
+          linear-gradient(135deg, blue 50%, transparent 50%),
+          linear-gradient(to right, skyblue, skyblue);
+
+        background-position:
+          calc(100% - 20px) calc(1em + 3px),
+          calc(100% - 15px) calc(1em + 3px),
+          100% 0;
+
+        background-size:
+          4px 4px,
+          5px 5px,
+          3em 2.5em;
+
+        background-repeat: no-repeat;
+    }
+
+}

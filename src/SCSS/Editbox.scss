@@ -1,0 +1,36 @@
+.Editbox_container {
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+    margin: 10px;
+    
+    .Editbox_label {
+        font-size: 12px;
+        margin-bottom: 10px;
+        font-weight: 450;
+    }
+
+    .Editbox_icon {
+        font-size: 12px;
+        color: #777;
+        position: absolute;
+        margin-top: 5px;
+        margin-left: 5px;
+    }
+    .Editbox_box { 
+       border: none;
+       outline: none;
+       width: 100%;
+       border-bottom: 1px solid rgba(0,0,0,0.5);
+       border-bottom-left-radius: 4px;
+       border-bottom-right-radius: 4px;
+       color: rgba(0,0,0,0.9);
+       padding-left: 25px;
+
+       &:focus-visible {
+           border-bottom: 1px solid rgba(14, 14, 218, 0.5);;
+           transition: all 0.3s ease;
+           box-shadow: 0 2px  0 rgba(14, 14, 218, 0.2);
+        }
+    }
+}
