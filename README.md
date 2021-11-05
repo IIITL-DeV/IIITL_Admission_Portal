@@ -11,15 +11,15 @@
   <li class="has-line-data" data-line-start="8" data-line-end="9">verifyer can Aprove and Reject application with commit.</li>
 <li class="has-line-data" data-line-start="10" data-line-end="11"> Student can track its application status.</li>
 <li class="has-line-data" data-line-start="11" data-line-end="12">A secure signIN and signUP for both students and verifyers</li>
-<li class="has-line-data" data-line-start="12" data-line-end="14">This web Portal includes all these features along with simple and cleanto use UI</li>
+<li class="has-line-data" data-line-start="12" data-line-end="14">This web Portal includes all these features along with simple and clean UI</li>
 </ul>
 <h2 class="code-line" data-line-start=16 data-line-end=17 ><a id="Tech_16"></a>Tech</h2>
 <p class="has-line-data" data-line-start="18" data-line-end="19">This Web Portal uses a number of open source tools and libraries to work properly:</p>
-<p class="has-line-data" data-line-start="18" data-line-end="19">We have used Iterative Waterfall model to build this poject.</p>
+<p class="has-line-data" data-line-start="18" data-line-end="19">We have used Iterative Waterfall model to build this project.</p>
 <h5 class="code-line" data-line-start=20 data-line-end=21 ><a id="Frontend_20"></a>Frontend</h5>
 <ul>
 <li class="has-line-data" data-line-start="21" data-line-end="22"><a href="https://reactjs.org/">React.js</a> - JavaScript library for building or UI components</li>
-<li class="has-line-data" data-line-start="23" data-line-end="24"><a href="https://www.npmjs.com/package/redux">Redux</a> - JavaScript library for managing application state.</li>
+<li class="has-line-data" data-line-start="23" data-line-end="24"><a href="https://www.npmjs.com/package/redux">Reducer</a> - JavaScript library for managing application state.</li>
  <li class="has-line-data" data-line-start="23" data-line-end="24">Framer and Lottie Animations for smooth user interaction.</li>
 </ul>
 <h5 class="code-line" data-line-start=26 data-line-end=27 ><a id="Backend_26"></a>Backend </h5>
