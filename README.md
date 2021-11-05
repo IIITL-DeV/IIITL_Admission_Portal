@@ -57,5 +57,12 @@ npm start
 
 
 <h2 class="code-line" data-line-start=16 data-line-end=17 >APP Screens</h2>
+<div display='flex' flexDirection='row' justifycontent='space-between'>
 
+  <img src='https://i.imgur.com/bNFSbhS.jpg' title="A cute kitten" width="500" height="300">
+  <img src='https://i.imgur.com/eNSyZZO.jpg' title="A cute kitten" width="500" height="300">
+  <img src='https://i.imgur.com/F7JYbar.jpg' title="A cute kitten" width="500" height="300">
+  <img src='https://i.imgur.com/bBlo5H5.jpg' title="A cute kitten" width="500" height="300">
+</div>
+  <img src='https://i.imgur.com/eye1j1y.jpg' title="A cute kitten" width="400" height="600">
 
