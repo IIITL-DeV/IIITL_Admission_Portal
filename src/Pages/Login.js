@@ -17,6 +17,7 @@ import './../SCSS/Login.scss'
 import  LottieAnimation  from './../Animations/Leaf_Animation/Leaf_Animation.js'
 import Register from './../Animations/Register.json'
 import LoginAnimation from './../Animations/Login.json'
+import Load from './../Animations/Loading1.json'
 
 // Framer Motion
 import { motion } from 'framer-motion'
@@ -27,6 +28,14 @@ import { UserContext } from './../App.js'
 export const Login = () => {
 
     const history = useHistory();
+
+    const [ Loading, setLoading] = useState(false)
+
+    // Error Handling
+    const [LoginError , setLoginError ] = useState("")
+
+    // Register Error Handling
+    const [RegisterError , setRegisterError ] = useState("")
 
     // Context
     const {state, dispatch} = useContext(UserContext)
@@ -49,7 +58,8 @@ export const Login = () => {
         Username : "",
         password : "",
         phone : "",
-        c_password : ""
+        c_password : "",
+        email : ""
     })
 
     // Setting The Login editbox with the input values
@@ -72,36 +82,49 @@ export const Login = () => {
     const Login_PostData = async (event) => {
         event.preventDefault()
 
-        const { Username, password } = user
+        setLoading(true)
+        try {
+            const { Username, password } = user
 
-        // Fetch Call to the backend
-        const res = await fetch('/Signin', {
-            method : "POST",
-            headers: {
-                "Content-Type" : "application/json"
-            },
-            body : JSON.stringify({
-                Username, password
+            // Fetch Call to the backend
+            const res = await fetch('/Signin', {
+                method : "POST",
+                headers: {
+                    "Content-Type" : "application/json"
+                },
+                body : JSON.stringify({
+                    Username, password
+                })
             })
-        })
-
-        const data = await res.json()
-        if (res.status === 201) {
-            
-            // Changing Current State of UserContext to true For Login Logout
-            dispatch({type : "USER", payload : true})
-            history.push('/')
-        }
-        else {
-            console.log(data.error)
+    
+            const data = await res.json()
+            if (res.status === 201) {
+                
+                // Changing Current State of UserContext to true For Login Logout
+                dispatch({type : "USER", payload : true})
+                history.push('/')
+                setLoginError("");
+            }
+            else {
+                setLoginError(data.error)
+                console.log(data.error)
+            }
+        } catch (err) {
+            setLoginError(err)
+            console.log(err)
+        } finally {
+            setLoading(false)
         }
     }
 
     // Posting Register Data to the Backend
     const Register_PostData = async (event) => {
         event.preventDefault()
+        setLoading(true)
 
-        const { Username, phone, password, c_password} = newUser
+        try {
+            
+        const { Username, phone, password, email} = newUser
 
         // Fetch Call to the Backend
         const res = await fetch('/SignUp', {
@@ -110,7 +133,7 @@ export const Login = () => {
                 "Content-Type" : "application/json"
             },
             body : JSON.stringify({
-                Username, phone , password, c_password
+                Username, phone , password, email
             })
         })
 
@@ -118,10 +141,20 @@ export const Login = () => {
         console.log(res)
         if (res.status === 201) {
             console.log(data)
+            setRegisterError("")
             setClick(!click)
         }
         else {
+            setRegisterError(data.error)
             console.log(data.error)
+        }
+
+        } catch (err) {
+            setRegisterError(err)
+            console.log(err)
+        }
+        finally {
+            setLoading(false)
         }
     }
 
@@ -136,15 +169,21 @@ export const Login = () => {
                     <img src = {Avatar} alt = "Profile"></img>
                </div>
 
+               <div className = "Form_error">{RegisterError}</div>
+
                <form method = "POST" >
                         <div className = "LoginPage_fields">
                             <Editbox type = "text" name = "Username" icon = "1" label = "Name"  value = {newUser.Username} onChange = {Register_handleChange}></Editbox>
                             <Editbox type = "password" name = "password" icon = "3" label = "Password"  value = {newUser.password} onChange = {Register_handleChange}></Editbox>
-                            <Editbox type = "text" name = "c_password" label = "Confirm Password" icon = "3"  value = {newUser.c_password} onChange = {Register_handleChange}></Editbox>
-                            <Editbox type = "text" name = "phone" label = "Phone No"  icon = "2" value = {newUser.phone} onChange = {Register_handleChange}></Editbox>
+                            <Editbox type = "text" name = "phone" label = "Jee Roll no"  icon = "2" value = {newUser.phone} onChange = {Register_handleChange}></Editbox>
+                            <Editbox type = "email" name = "email" label = "Email Id"  icon = "4" value = {newUser.email} onChange = {Register_handleChange}></Editbox>
                         </div>
 
                         <div className = "LoginPage_submit">
+                            {Loading ? (
+                                <LottieAnimation lotti = {Load} width = '100px'></LottieAnimation>
+                            ): (<></>)}
+
                             <Button 
                             buttonStyle = 'btn--outline'
                             buttonColor = 'blue' 
@@ -164,6 +203,8 @@ export const Login = () => {
                     <img src = {Avatar} alt = "Profile"></img>
                 </div>
 
+                <div className = "Form_error">{LoginError}</div>
+
                 <form method = "POST" >
                     <div className = "LoginPage_fields">
                         <Editbox type = "text" name = "Username" icon = "1" label = "Username" value = {user.Username} onChange = {Login_handleChange}></Editbox>
@@ -171,6 +212,10 @@ export const Login = () => {
                     </div>
 
                  <div className = "LoginPage_submit">
+                        {Loading ? (
+                                <LottieAnimation lotti = {Load} width = '100px'></LottieAnimation>
+                        ): (<></>)}
+
                     <Button  
                         buttonStyle = 'btn--outline' 
                         buttonColor = 'blue' 
@@ -197,7 +242,7 @@ export const Login = () => {
                     <div className = "Register_Animation">
                         <LottieAnimation lotti = {LoginAnimation} width = "60%"></LottieAnimation>
                         <div className = "movable_container_btn">
-                            <Button buttonStyle = 'btn--outline' onClick = {handleClick}>Login</Button>
+                            <Button buttonStyle = 'btn--outline' onClick = {handleClick}>Click here to Login</Button>
                         </div>
                     </div>
 

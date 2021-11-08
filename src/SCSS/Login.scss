@@ -13,6 +13,15 @@
         border-radius: 2%;
         border: 0.002px solid rgba(0,0,0,0.1);
         margin: 5vw;
+
+        .Form_error {
+            margin-top: 20px;
+            display: flex;
+            color: #F64C72;
+            font-size: 12px;
+            justify-content: center;
+            align-items: center;
+        }
         
         .LoginPage_Container_Heading {
             display: flex;
@@ -34,7 +43,7 @@
 
         .LoginPage_submit {
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             width: 25%;

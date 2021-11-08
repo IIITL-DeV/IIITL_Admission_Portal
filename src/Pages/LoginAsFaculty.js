@@ -11,11 +11,10 @@ import  Pic  from './../Animations/studentsStudying.json'
 // SCSS
 import './../SCSS/LoginAsFaculty.scss'
 
-export const LoginAsFaculty = () =>  {
+// Avatar
+import Avatar from './../Assets/avatar.png'
 
-    useEffect(() => {
-        console.log("HELLO")
-    }, [])
+export const FacultyLogin = () =>  {
 
     return (
         <div className = "LoginFaculty_container">
@@ -26,6 +25,12 @@ export const LoginAsFaculty = () =>  {
             </div>
             
             <div className = "LoginAsFaculty_inputBox">
+                <h5 className = "LoginPage_Container_Heading">Login</h5>
+
+                <div className = "LoginPage_Container_Avatar">
+                    <img src = {Avatar} alt = "Profile"></img>
+                </div>
+
             <form>
                     <div className = "LoginPage_fields">
                         <Editbox type = "text" name = "Username" icon = "1" label = "Username"  ></Editbox>
@@ -48,4 +53,4 @@ export const LoginAsFaculty = () =>  {
     )
 }
 
-export default LoginAsFaculty
+export default FacultyLogin

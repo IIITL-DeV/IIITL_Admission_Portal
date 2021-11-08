@@ -3,6 +3,8 @@ const mongoose = require('mongoose')
 // For Hashing Password
 const bcrypt = require('bcryptjs')
 
+const  validator = require('validator')
+
 // Generating Token
 const jwt = require('jsonwebtoken')
 
@@ -13,6 +15,17 @@ const userSchema = new mongoose.Schema({
     required: true,
     trim: true
   }, 
+  email : {
+    type: String,
+    required: true,
+    trim : true,
+    lowercase : true,
+    validate : {
+      validator : validator.isEmail,
+      message: '{VALUE} is not a valid email',
+      isAsync: false
+    }
+  },
   age: {
     type: Number,
     default: 18,
@@ -73,6 +86,7 @@ userSchema.methods.generateAuthToken = async function () {
     console.log(err)
   }
 }
+
 
 // Hash The plain text password before saving into database
 userSchema.pre('save', async function (next) {

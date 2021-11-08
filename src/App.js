@@ -17,7 +17,7 @@ import { Logout } from './Pages/Logout.js'
 import { Verifier } from './Pages/Verifir.js'
 import { GeneralInfo } from './Pages/General_Info.js'
 import { ChoicePage } from './Pages/ChoicePage.js'
-import { LoginAsFaculty } from './Pages/LoginAsFaculty.js'
+import { FacultyLogin } from './Pages/LoginAsFaculty.js'
 
 // Toggle State Between login and Logout
 import { reducer } from  './Reducer/useReducer.js'
@@ -83,7 +83,7 @@ export const App = () => {
 
         <Route exact path = '/ChoicePage' component = { ChoicePage }></Route>
 
-        <Route exact path = '/LoginFaculty' compnent = { LoginAsFaculty }></Route>
+        <Route exact path = '/LoginFaculty' component = { FacultyLogin }></Route>
 
       </UserContext.Provider>
     </div>

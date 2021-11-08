@@ -1,4 +1,50 @@
 .LoginFaculty_container {
-    background-color: black;
-    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 92vh;
+
+    .LoginAsFaculty_inputBox {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        box-shadow: 2px 2px 2px 2px rgba(20,20,20,0.4);
+        border-radius: 2%;
+        border: 0.002px solid rgba(0,0,0,0.1);
+        min-width: 320px;
+        margin: 5vw;
+
+        .LoginPage_Container_Heading {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .LoginPage_fields {
+            width: 100%;
+            min-width: 300px;
+        }
+
+        .LoginPage_Container_Avatar {
+            width: 95%;
+            display: flex;
+            justify-content: center;
+
+            img {
+                display: inline-block;
+                border-radius: 50%;
+                height: 80px;
+            }
+        }
+
+        .LoginPage_submit {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px;
+        }
+    }
 }
